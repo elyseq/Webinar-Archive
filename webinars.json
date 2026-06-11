@@ -5,8 +5,8 @@
     "date": "2020-10-30",
     "vimeoId": "1200342834",
     "duration": "61 min",
-    "summary": "A foundational overview of program evaluation methods, covering logic models, theory of change, and how to frame evaluation questions. Ideal for teams new to formal evaluation practice. Discusses formative vs. summative evaluation and when to use each approach.",
-    "tags": ["evaluation", "logic models", "theory of change", "foundations"],
+    "summary": "This webinar explores how different interviewing approaches affect the quantity and quality of information obtained from children. Through case examples, the presenters discuss the impact of open-ended prompts, potential investigator bias, and strategies for obtaining detailed narratives while maintaining a neutral interviewing stance.",
+    "tags": ["question types", "productivity", "credibility assessment", "forensic interviewing"],
     "transcript": "EMPTY"
   },
   {
@@ -15,8 +15,8 @@
     "date": "2020-04-17",
     "vimeoId": "1198557286",
     "duration": "54 min",
-    "summary": "Practical strategies for collecting high-quality data in nonprofit settings, including survey design, interview protocols, and managing data from multiple sites. Special focus on low-resource environments and volunteer data collectors.",
-    "tags": ["data collection", "surveys", "interviews", "nonprofits"],
+    "summary": "This webinar examines a case involving a 13-year-old who later recanted previous allegations of sexual abuse. The discussion focuses on common reasons children recant, how family dynamics and concerns about disrupting relationships can influence disclosures, and effective interviewing strategies for exploring prior statements without pressuring the child. Viewers will learn how forensic interviewers evaluate competing explanations for disclosure and recantation.",
+    "tags": ["case review", "recantation", "family pressure", "disclosure dynamics", "forensic interviewing"],
     "transcript": "EMPTY"
   },
   {
@@ -25,8 +25,8 @@
     "date": "2020-02-28",
     "vimeoId": "1198557157",
     "duration": "57 min",
-    "summary": "A foundational overview of program evaluation methods, covering logic models, theory of change, and how to frame evaluation questions. Ideal for teams new to formal evaluation practice. Discusses formative vs. summative evaluation and when to use each approach.",
-    "tags": ["evaluation", "logic models", "theory of change", "foundations"],
+    "summary": "This webinar examines a case involving an 11-year-old boy who disclosed repeated sexual abuse. The presenters discuss unique challenges that may arise when interviewing male victims, including embarrassment, shame, reluctance to discuss abuse, and strategies for helping children provide detailed narratives in a supportive environment.",
+    "tags": ["case review", "male victims", "trauma-informed interviewing", "narrative development", "disclosure challenges"],
     "transcript": "EMPTY"
   },
   {
@@ -35,8 +35,8 @@
     "date": "2020-02-14",
     "vimeoId": "1198554195",
     "duration": "55 min",
-    "summary": "Practical strategies for collecting high-quality data in nonprofit settings, including survey design, interview protocols, and managing data from multiple sites. Special focus on low-resource environments and volunteer data collectors.",
-    "tags": ["data collection", "surveys", "interviews", "nonprofits"],
+    "summary": "This webinar reviews a case involving allegations of problematic sexual behavior between siblings and explores the challenges of interviewing children when caregivers disagree about what occurred. The presenters discuss credibility assessment, family responses to disclosures, and factors that may increase the likelihood of recantation or inconsistent reporting.",
+    "tags": ["case review", "sibling abuse", "caregiver support", "child credibility", "recantation risk"],
     "transcript": "EMPTY"
   },
   {
@@ -45,8 +45,8 @@
     "date": "2020-05-15",
     "vimeoId": "1200369560",
     "duration": "57 min",
-    "summary": "How to transform raw evaluation data into compelling narratives for funders, boards, and communities. Covers data visualization principles, report writing, and communicating findings to non-technical audiences.",
-    "tags": ["data visualization", "reporting", "communication", "storytelling"],
+    "summary": "This webinar reviews a case involving repeated allegations of abuse and explores how caregiver responses can influence disclosure patterns. The discussion focuses on family support, disbelief, blame, and the role these factors play in children’s willingness to maintain or withdraw allegations over time.",
+    "tags": ["case review", "disclosure", "caregiver support", "recantation", "family dynamics"],
     "transcript": "EMPTY"
   },
   {
@@ -55,8 +55,8 @@
     "date": "2020-06-05",
     "vimeoId": "1200369620",
     "duration": "62 min",
-    "summary": "Organizational strategies for embedding continuous learning and evaluation into everyday practice. Discusses leadership buy-in, staff capacity building, and creating systems that support reflection and adaptation.",
-    "tags": ["organizational learning", "capacity building", "leadership", "culture"],
+    "summary": "This webinar examines one of the lab’s early remote forensic interviews and discusses the benefits and challenges of conducting child interviews through video technology. The presenters review interviewing techniques, rapport building in virtual settings, and considerations for maintaining interview quality when in-person interviews are not possible.",
+    "tags": ["case review", "remote interviewing", "virtual rapport building", "COVID-era interviewing", "technology in forensic interviews"],
     "transcript": "EMPTY"
   },
   {
@@ -65,8 +65,8 @@
     "date": "2020-11-13",
     "vimeoId": "1200369903",
     "duration": "6 min",
-    "summary": "An exploration of how equity and inclusion principles can be embedded throughout the evaluation cycle, from question design to dissemination. Covers culturally responsive evaluation frameworks and community-engaged approaches.",
-    "tags": ["equity", "inclusion", "culturally responsive", "community engagement"],
+    "summary": "This training-focused webinar examines forensic interviewing methods and the relationship between question types and the amount of information children provide. Using a real interview as an example, the presenters analyze open-ended questioning, narrative development, and techniques that encourage detailed and reliable responses.",
+    "tags": ["interview quality", "open-ended questions", "narrative elicitation", "interviewer training"],
     "transcript": "EMPTY"
   },
   {
@@ -75,7 +75,7 @@
     "date": "2026-03-27",
     "vimeoId": "1200372259",
     "duration": "58 min",
-    "summary": "A practical deep-dive into survey design, covering question types, response scales, order effects, and how to increase response rates. Includes common mistakes and how to avoid them.",
+    "summary": "",
     "tags": ["surveys", "questionnaire design", "response rates", "measurement"],
     "transcript": "EMPTY"
   },
@@ -85,8 +85,8 @@
     "date": "2021-01-22",
     "vimeoId": "1200372303",
     "duration": "49 min",
-    "summary": "How to identify, define, and measure meaningful program outcomes. Covers the difference between outputs, outcomes, and impact, and how to select appropriate indicators for each level.",
-    "tags": ["outcome measurement", "indicators", "outputs", "impact"],
+    "summary": "This webinar focuses on a teenager who disclosed abuse to friends through social media before later recanting. The discussion highlights best practices for interviewing youth who have made multiple disclosures, documenting prior reports, and understanding how family reactions may influence a child’s willingness to maintain or withdraw allegations.",
+    "tags": ["recantation", "social media disclosures", "family influence", "forensic interviewing strategies"],
     "transcript": "EMPTY"
   },
   {
@@ -95,7 +95,7 @@
     "date": "2026-03-06",
     "vimeoId": "1200372094",
     "duration": "59 min",
-    "summary": "A comprehensive guide to using focus groups as an evaluation tool. Covers recruitment, facilitation techniques, note-taking, and how to analyze and report qualitative data from group discussions.",
+    "summary": "",
     "tags": ["focus groups", "qualitative methods", "facilitation", "analysis"],
     "transcript": "EMPTY"
   }
