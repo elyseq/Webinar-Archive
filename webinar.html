@@ -12,9 +12,9 @@
       --bg: #f7f5f0;
       --bg-card: #ffffff;
       --border: #e2ddd6;
-      --accent: #2d5a8e;
+      --accent: #a20400; /* #a20400 #2d5a8e*/
       --accent-light: #e8f0f8;
-      --accent-hover: #1e4070;
+      --accent-hover: #a20400; /* #a20400 #1e4070*/
       --tag-bg: #eef2f7;
       --tag-text: #2d5a8e;
       --radius: 10px;
@@ -106,13 +106,31 @@
     }
 
     /* ── Video ── */
-    .video-section { background: #000; }
+    /*.video-section { background: #000; }
     .video-wrap {
       max-width: 860px;
       margin: 0 auto;
       aspect-ratio: 16/9;
-    }
-    .video-wrap iframe { width: 100%; height: 100%; display: block; }
+    } 
+    .video-wrap iframe { width: 100%; height: 100%; display: block; } */
+    .video-section {
+    background: var(--bg);
+    padding: 32px 20px;
+  }
+
+  .video-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .video-wrap iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
     .video-placeholder {
       width: 100%;
       height: 100%;
