@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webinar — Loading…</title>
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --ink-muted: #6b6b6b;
+      --ink-faint: #9b9b9b;
+      --bg: #f7f5f0;
+      --bg-card: #ffffff;
+      --border: #e2ddd6;
+      --accent: #2d5a8e;
+      --accent-light: #e8f0f8;
+      --accent-hover: #1e4070;
+      --tag-bg: #eef2f7;
+      --tag-text: #2d5a8e;
+      --radius: 10px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    /* ── Header / nav ── */
+    header {
+      background: var(--accent);
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .back-link {
+      font-family: 'system-ui', sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.15s;
+    }
+    .back-link:hover { color: #fff; }
+    .back-link svg { flex-shrink: 0; }
+    .header-divider {
+      width: 1px;
+      height: 16px;
+      background: rgba(255,255,255,0.3);
+    }
+    .header-title {
+      font-family: 'system-ui', sans-serif;
+      font-size: 13px;
+      opacity: 0.75;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ── Layout ── */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--accent);
+      color: #fff;
+      padding: 32px 40px 36px;
+      border-bottom: 3px solid rgba(255,255,255,0.1);
+    }
+    .hero-meta {
+      font-family: 'system-ui', sans-serif;
+      font-size: 12px;
+      opacity: 0.65;
+      margin-bottom: 10px;
+      display: flex;
+      gap: 16px;
+    }
+    .hero h1 {
+      font-size: 28px;
+      font-weight: normal;
+      line-height: 1.3;
+      letter-spacing: -0.3px;
+      margin-bottom: 16px;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tag {
+      font-family: 'system-ui', sans-serif;
+      font-size: 11px;
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    /* ── Video ── */
+    .video-section { background: #000; }
+    .video-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      aspect-ratio: 16/9;
+    }
+    .video-wrap iframe { width: 100%; height: 100%; display: block; }
+    .video-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-family: 'system-ui', sans-serif;
+      font-size: 14px;
+      flex-direction: column;
+      gap: 12px;
+      padding: 60px 20px;
+    }
+    .video-placeholder svg { opacity: 0.3; }
+
+    /* ── Body content ── */
+    .content {
+      padding: 36px 0 60px;
+    }
+    .section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+    .section-label {
+      font-family: 'system-ui', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-faint);
+      margin-bottom: 12px;
+    }
+    .summary-text {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--ink-muted);
+    }
+
+    /* ── AI section ── */
+    .ai-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+    .ai-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .ai-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .ai-header h2 {
+      font-size: 16px;
+      font-weight: normal;
+    }
+    .ai-desc {
+      font-family: 'system-ui', sans-serif;
+      font-size: 13px;
+      color: var(--ink-faint);
+      margin-bottom: 16px;
+      margin-left: 18px;
+    }
+    .ai-input-row {
+      display: flex;
+      gap: 8px;
+    }
+    input[type="text"], input[type="search"] {
+      font-family: 'system-ui', sans-serif;
+      font-size: 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 9px 14px;
+      background: var(--bg);
+      color: var(--ink);
+      outline: none;
+      width: 100%;
+    }
+    input:focus { border-color: var(--accent); background: #fff; }
+
+    .btn-primary {
+      font-family: 'system-ui', sans-serif;
+      font-size: 13px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 9px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-primary:disabled { opacity: 0.5; cursor: default; }
+
+    .ai-response {
+      margin-top: 16px;
+      font-family: 'system-ui', sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink);
+      display: none;
+      background: var(--bg);
+      border-radius: 6px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+    }
+    .ai-response.visible { display: block; }
+    .ai-loading { color: var(--ink-faint); font-style: italic; }
+
+    /* ── Loading / error states ── */
+    .page-loading {
+      text-align: center;
+      padding: 80px 20px;
+      font-family: 'system-ui', sans-serif;
+      color: var(--ink-faint);
+      font-size: 15px;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 16px 20px; }
+      .hero { padding: 24px 20px; }
+      .hero h1 { font-size: 22px; }
+      .container { padding: 0 16px; }
+      .section, .ai-section { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="back-link" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M19 12H5M12 5l-7 7 7 7"/>
+    </svg>
+    Back to archive
+  </a>
+  <div class="header-divider"></div>
+  <span class="header-title" id="header-title">Loading…</span>
+</header>
+
+<div id="page-content">
+  <div class="page-loading">Loading webinar…</div>
+</div>
+
+<script>
+// ── Read webinar ID from URL ──────────────────────────────
+const params = new URLSearchParams(window.location.search);
+const webinarId = parseInt(params.get('id'));
+let currentWebinar = null;
+
+if (!webinarId) {
+  document.getElementById('page-content').innerHTML =
+    '<div class="page-loading">No webinar ID specified. <a href="index.html">Return to archive.</a></div>';
+} else {
+  fetch('webinars.json')
+    .then(r => r.json())
+    .then(data => {
+      const w = data.find(x => x.id === webinarId);
+      if (!w) {
+        document.getElementById('page-content').innerHTML =
+          '<div class="page-loading">Webinar not found. <a href="index.html">Return to archive.</a></div>';
+        return;
+      }
+      currentWebinar = w;
+      renderPage(w);
+    })
+    .catch(() => {
+      document.getElementById('page-content').innerHTML =
+        '<div class="page-loading">Could not load webinar data. Make sure you\'re running a local server.</div>';
+    });
+}
+
+function formatDate(dateStr) {
+  return new Date(dateStr + 'T12:00:00').toLocaleDateString('en-US', {
+    year: 'numeric', month: 'long', day: 'numeric'
+  });
+}
+
+function renderPage(w) {
+  document.title = w.title + ' — Webinar Archive';
+  document.getElementById('header-title').textContent = w.title;
+
+  const isPlaceholder = !w.vimeoId || w.vimeoId.startsWith('YOUR_VIMEO');
+  const videoHtml = isPlaceholder
+    ? `<div class="video-placeholder">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"/>
+          <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/>
+        </svg>
+        <span>Add your Vimeo ID to webinars.json to enable video playback</span>
+       </div>`
+    : `<iframe src="https://player.vimeo.com/video/${w.vimeoId}?badge=0&autopause=0&title=0&byline=0&portrait=0"
+         frameborder="0"
+         allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+         allowfullscreen
+         referrerpolicy="strict-origin-when-cross-origin">
+       </iframe>`;
+
+  document.getElementById('page-content').innerHTML = `
+    <div class="hero">
+      <div class="container">
+        <div class="hero-meta">
+          <span>${formatDate(w.date)}</span>
+          <span>${w.duration}</span>
+        </div>
+        <h1>${w.title}</h1>
+        <div class="hero-tags">
+          ${w.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+        </div>
+      </div>
+    </div>
+
+    <div class="video-section">
+      <div class="video-wrap">${videoHtml}</div>
+    </div>
+
+    <div class="content">
+      <div class="container">
+
+        <div class="section">
+          <div class="section-label">Summary</div>
+          <p class="summary-text">${w.summary}</p>
+        </div>
+
+        <div class="ai-section">
+          <div class="ai-header">
+            <div class="ai-dot"></div>
+            <h2>Ask about this webinar</h2>
+          </div>
+          <p class="ai-desc">Search the transcript and get specific answers from this session.</p>
+          <div class="ai-input-row">
+            <input type="text" id="ai-input"
+              placeholder="e.g. What methods were recommended for data collection?"
+              onkeydown="if(event.key==='Enter') askAI()">
+            <button class="btn-primary" id="ai-btn" onclick="askAI()">Ask</button>
+          </div>
+          <div class="ai-response" id="ai-response"></div>
+        </div>
+
+      </div>
+    </div>
+  `;
+}
+
+// ── AI: ask about this webinar ─────────────────────────────
+async function askAI() {
+  const input = document.getElementById('ai-input');
+  const q = input.value.trim();
+  if (!q || !currentWebinar) return;
+
+  const btn = document.getElementById('ai-btn');
+  const resp = document.getElementById('ai-response');
+  btn.disabled = true;
+  resp.className = 'ai-response visible';
+  resp.innerHTML = '<span class="ai-loading">Searching transcript…</span>';
+
+  try {
+    const answer = await callClaude(
+      `You are a helpful assistant with access to the transcript of a webinar titled "${currentWebinar.title}".
+Answer the user's question based only on the transcript and summary provided.
+Be concise and specific. If the transcript doesn't contain relevant information, say so.
+
+TRANSCRIPT:
+${currentWebinar.transcript}
+
+SUMMARY:
+${currentWebinar.summary}`,
+      q
+    );
+    resp.innerHTML = answer;
+  } catch(e) {
+    resp.innerHTML = `<span style="color:#c0392b">Error: ${e.message}. Make sure your API key is configured in config.js</span>`;
+  }
+  btn.disabled = false;
+}
+
+// ── Claude API call ────────────────────────────────────────
+async function callClaude(systemPrompt, userMessage) {
+  if (typeof ANTHROPIC_API_KEY === 'undefined' || !ANTHROPIC_API_KEY) {
+    throw new Error('API key not set. Edit config.js and add your Anthropic API key.');
+  }
+
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': ANTHROPIC_API_KEY,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 1024,
+      system: systemPrompt,
+      messages: [{ role: 'user', content: userMessage }]
+    })
+  });
+
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error?.message || `API error ${res.status}`);
+  }
+
+  const data = await res.json();
+  return data.content[0].text;
+}
+</script>
+<script src="config.js"></script>
+</body>
+</html>
