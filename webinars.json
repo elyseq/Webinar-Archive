@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "201030 Delilah (11) and Bryanna (13)",
+    "title": "Question Type and Productivity: Delilah (11) and Bryanna (13)",
     "date": "2020-10-30",
     "vimeoId": "1200342834",
     "duration": "61 min",
@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "title": "200417 Renee (13)",
+    "title": "Case Review: 13 year old Renee",
     "date": "2020-04-17",
     "vimeoId": "1198557286",
     "duration": "54 min",
@@ -20,8 +20,8 @@
     "transcript": "EMPTY"
   },
   {
-    "id": 9,
-    "title": "200228 Matthew (11)",
+    "id": 3,
+    "title": "Case Review: 11 year old Matthew",
     "date": "2020-02-28",
     "vimeoId": "1198557157",
     "duration": "57 min",
@@ -30,8 +30,8 @@
     "transcript": "EMPTY"
   },
   {
-    "id": 10,
-    "title": "200214 Faith (9)",
+    "id": 4,
+    "title": "Case Review: 9 year old Faith",
     "date": "2020-02-14",
     "vimeoId": "1198554195",
     "duration": "55 min",
@@ -40,8 +40,8 @@
     "transcript": "EMPTY"
   },
   {
-    "id": 3,
-    "title": "200515 Lesly (12)",
+    "id": 5,
+    "title": "Case Review: 12 year old Lesly",
     "date": "2020-05-15",
     "vimeoId": "1200369560",
     "duration": "57 min",
@@ -50,8 +50,8 @@
     "transcript": "EMPTY"
   },
   {
-    "id": 4,
-    "title": "200605 Deavyn (14)",
+    "id": 6,
+    "title": "Case Review: 14 year old Deavyn",
     "date": "2020-06-05",
     "vimeoId": "1200369620",
     "duration": "62 min",
@@ -60,8 +60,8 @@
     "transcript": "EMPTY"
   },
   {
-    "id": 5,
-    "title": "201113- Bryanna (13).2",
+    "id": 7,
+    "title": "Question Type and Productivity: Bryanna (13)",
     "date": "2020-11-13",
     "vimeoId": "1200369903",
     "duration": "6 min",
@@ -70,8 +70,8 @@
     "transcript": "EMPTY"
   },
   {
-    "id": 6,
-    "title": "20260327 SG (14)",
+    "id": 8,
+    "title": "The First Jane Doe in the Epstein case: S.G. (14)",
     "date": "2026-03-27",
     "vimeoId": "1200372259",
     "duration": "58 min",
@@ -80,8 +80,8 @@
     "transcript": "EMPTY"
   },
   {
-    "id": 7,
-    "title": "210122 Azul (13)",
+    "id": 9,
+    "title": "Recantation: Azul (13)",
     "date": "2021-01-22",
     "vimeoId": "1200372303",
     "duration": "49 min",
@@ -90,8 +90,8 @@
     "transcript": "EMPTY"
   },
   {
-    "id": 8,
-    "title": "20260306 Ashley (14)",
+    "id": 10,
+    "title": "\"Stuck in the same cycle everyday\" Ashley (14)",
     "date": "2026-03-06",
     "vimeoId": "1200372094",
     "duration": "59 min",
