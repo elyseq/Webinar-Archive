@@ -212,15 +212,6 @@
     .tag:hover { background: #d4e3f5; }
     .tag.active { background: var(--accent); color: #fff; }
 
-    .duration-badge {
-      font-family: 'system-ui', sans-serif;
-      font-size: 11px;
-      color: var(--ink-faint);
-      margin-left: auto;
-      align-self: center;
-      white-space: nowrap;
-    }
-
     .empty {
       grid-column: 1 / -1;
       text-align: center;
@@ -568,7 +559,8 @@ fetch('webinars.json')
   });
 
 function buildTagFilter() {
-  const allTags = [...new Set(webinars.flatMap(w => w.tags))].sort();
+  //const allTags = [...new Set(webinars.flatMap(w => w.tags))].sort();
+  const allTags = [...new Set(webinars.flatMap(w => w.tags || []))].sort();
   const sel = document.getElementById('tag-filter');
   allTags.forEach(tag => {
     const opt = document.createElement('option');
@@ -585,12 +577,17 @@ function filterWebinars() {
   const sort = document.getElementById('sort-order').value;
 
   let results = webinars.filter(w => {
-    const matchesTag = !tag || w.tags.includes(tag);
+    //const matchesTag = !tag || w.tags.includes(tag);
+    const matchesTag = !tag || (w.tags || []).includes(tag);
     const matchesSearch = !q || (
-      w.title.toLowerCase().includes(q) ||
-      w.summary.toLowerCase().includes(q) ||
-      w.tags.some(t => t.toLowerCase().includes(q)) ||
-      (w.transcript && w.transcript.toLowerCase().includes(q))
+      // w.title.toLowerCase().includes(q) ||
+      // w.summary.toLowerCase().includes(q) ||
+      // w.tags.some(t => t.toLowerCase().includes(q)) ||
+      // (w.transcript && w.transcript.toLowerCase().includes(q))
+      (w.title || '').toLowerCase().includes(q) ||
+      (w.summary || '').toLowerCase().includes(q) ||
+      (w.tags || []).some(t => t.toLowerCase().includes(q)) ||
+      (w.transcript || '').toLowerCase().includes(q)
     );
     return matchesTag && matchesSearch;
   });
@@ -630,7 +627,6 @@ function renderGrid(list, q) {
       <div class="card-footer">
         ${w.tags.map(t => `<button class="tag ${t === document.getElementById('tag-filter').value ? 'active' : ''}" onclick="setTag(event,'${t}')">${t}</button>`).join('')}
         ${matchBadge}
-        <span class="duration-badge">${w.duration}</span>
       </div>
     </article>`;
   }).join('');
