@@ -1,262 +1,161 @@
 # Webinar Archive
 
-The Webinar Archive is a searchable website for the USC Child Interview Laboratory webinar collection.
+A searchable website for the USC Child Interview Laboratory webinar collection. Users can browse archived webinars, search by topic, and (eventually) ask questions across transcripts using AI.
 
-The goal of this project is to provide a simple way for users to browse archived webinars, search webinar topics, and (eventually) ask questions across webinar transcripts using AI.
-
-The website is intentionally designed to be simple to maintain so that future lab members can continue updating it without needing extensive programming experience.
+Designed to be simple enough for future lab members to maintain without programming experience.
 
 ---
 
-# Current Features
-
-The website currently supports:
-
-- Webinar library
-- Individual webinar pages
-- Vimeo video embeds
-- Search by title, transcript, summary, and tags
-- Webinar tags/categories
-- AI search interface (backend still under development)
-- Google Form sign-up button for webinar registration
-
----
-
-# Website Structure
-
-The project consists of only a few files.
+## Project Files
 
 ```
-index.html
-Homepage containing the webinar library
-
-webinar.html
-Individual webinar page
-
-webinars.json
-Stores all webinar information
-
-config.js
-Stores AI configuration (not committed to GitHub!)
-
-transcripts/
-(eventually)
-Stores transcript text files if transcripts are moved out of webinars.json
-```
-
-Most future edits will only require changes to **webinars.json**.
-
----
-
-# Adding a New Webinar
-
-## Step 1: Upload the video to Vimeo
-
-Upload the webinar to Vimeo and copy the Vimeo video ID.
-
-The Vimeo ID is the number in the URL:
-- `https://vimeo.com/123456789` → ID is `123456789`
-
-
----
-
-## Step 2: Open `webinars.json`
-
-Every webinar looks something like this:
-
-,{
-  "id": ...,
-  "title": "...",
-  "date": "0000-00-00",
-  "vimeoId": "...",
-  "duration": "... mins",
-  "summary": "...",
-  "tags": ["...", "...", "..."],
-  "transcript": "..."
-}
-
-Copy an existing webinar and update the information.
-
----
-
-## Step 3: Save
-
-Refresh the webpage.
-
-The webinar should automatically appear.
-
-No other code needs to be changed.
-
----
-
-# Editing Existing Webinars
-
-The following can all be edited inside `webinars.json`:
-
-- Title
-- Date
-- Vimeo ID
-- Duration
-- Summary
-- Tags
-- Transcript
-
-Nothing else needs to be updated.
-
----
-
-# Search
-
-The search bar currently searches:
-
-- Webinar title
-- Summary
-- Transcript
-- Tags
-
-Results update automatically while typing.
-
----
-
-# AI Search (Work in Progress)
-
-The website already includes an AI search interface.
-
-The eventual goal is to allow users to ask questions such as:
-
-> Which webinars discuss delayed disclosure?
-
-Instead of searching by keywords, the AI will search across webinar transcripts and recommend the most relevant webinars.
-
-The current interface is complete, but the backend is still under development.
-
----
-
-# Customizing Colors
-
-The main color of the website is controlled near the top of both `index.html` and `webinar.html`.
-
-```css
-:root {
-    --accent:
-    --accent-light:
-    --accent-hover:
-}
-```
-
-Changing these values updates the color scheme throughout the website.
-
----
-
-# Updating the Sign-Up Button
-
-The "Sign up for webinars & archive access" button is located in the `<header>` of `index.html`.
-
-Simply replace the Google Form link if the form ever changes.
-
----
-
-# Future Improvements
-
-Possible future additions include:
-
-- Full AI-powered transcript search
-- AI-generated webinar summaries
-- Transcript files stored separately from `webinars.json`
-- Better filtering options
-- User login system
-- Admin dashboard for adding webinars
-- Automatic transcript processing
-
----
-
-# Technologies Used
-
-Current:
-
-- HTML
-- CSS
-- JavaScript
-- JSON
-- Vimeo
-- Google Forms
-
-Planned:
-
-- Open-source LLM
-- Retrieval-Augmented Generation (RAG)
-- Transcript indexing
-
----
-
-# Philosophy of This Project
-
-The website is intentionally designed to remain simple.
-
-Instead of requiring a database or complicated server setup, webinar information is currently stored in a single JSON file. This makes the archive easy to understand, easy to edit, and easy to maintain by future lab members.
-
-As the archive grows, additional features (AI search, transcript indexing, login systems, etc.) can be added without redesigning the website from scratch.
-
-
-# Webinar Archive — Setup Guide
-
-## Files in this folder
-
-```
-webinar-archive/
-├── index.html       ← the entire website (one file)
-├── webinar.html     ← individual webinars with vimeo embeds
-├── webinars.json    ← all your webinar data
-├── config.js        ← your Anthropic API key goes here
-└── README.md        ← this file
+index.html        Homepage and webinar library
+webinar.html      Individual webinar pages with Vimeo embeds
+webinars.json     All webinar data (the only file you'll regularly edit)
+config.js         Anthropic API key — not committed to GitHub
+transcripts/      Transcript text files (planned)
 ```
 
 ---
 
-## Run it locally (right now, no internet needed)
+## Running Locally
 
-**Mac:**
-Open Terminal, drag the `webinar-archive` folder into it, type:
+Browsers block local JSON loading for security, so you need a simple server instead of opening `index.html` directly.
+
+**Mac** — open Terminal in the project folder and run:
 ```
-cd <folder path>
 python3 -m http.server 8000
 ```
-Then open: http://localhost:8000
 
-**Windows:**
-Open Command Prompt in the folder and run:
+**Windows** — open Command Prompt in the project folder and run:
 ```
 python -m http.server 8000
 ```
-Then open: http://localhost:8000
 
-> Why not just open index.html directly? Browsers block local JSON file loading for security. The server fixes this.
+Then open [http://localhost:8000](http://localhost:8000) in your browser.
 
 ---
 
-## Enable the AI search bar
+## Adding a New Webinar
 
-1. Go to https://console.anthropic.com and create a free account
-2. Create an API key (starts with `sk-ant-api03-...`)
+### Step 1 — Upload to Vimeo
+
+Upload the recording to Vimeo and copy the video ID from the URL:
+- `https://vimeo.com/123456789` → ID is `123456789`
+
+### Step 2 — Edit `webinars.json`
+
+Each webinar entry looks like this:
+
+```json
+{
+  "id": 85,
+  "title": "Title of the Webinar",
+  "date": "2025-04-18",
+  "vimeoId": "123456789",
+  "summary": "A short description of the webinar.",
+  "tags": [],
+  "transcript": ""
+}
+```
+
+Copy the entry closest to the bottom of the file, paste it after the last entry, and update the fields. The `id` should be the next number in the list.
+
+**Date format:** `YYYY-MM-DD`  
+**Tags and transcript:** leave as-is — these are filled in separately.
+
+> Make sure there is a comma after the `}` of the entry above yours, and no comma after your new entry (the last entry never has a trailing comma).
+
+### Step 3 — Save and verify
+
+Save the file and refresh the browser. The webinar should appear automatically. No other files need to be changed.
+
+---
+
+## Contributing via GitHub Desktop
+
+You do not need to know how to code to update the archive. A detailed first-time setup guide with screenshots is here: **[Webinar Archive Setup Guide](https://docs.google.com/document/d/1Z6nMfVLgREws9Tpc78Z9erEHxSp-OEsW2Ir5-C6Sxy4/edit?tab=t.x54u4k1fbrxb#heading=h.ywaf027ondt9)**
+
+### First-time setup
+
+1. Create a [GitHub account](https://github.com/signup)
+2. Install [GitHub Desktop](https://desktop.github.com/)
+3. Install [Visual Studio Code](https://code.visualstudio.com/)
+4. In GitHub Desktop: *File → Clone Repository*, paste this repo's URL, and click **Clone**
+5. Go to *File → Options → Integrations* and set the External Editor to **Visual Studio Code**
+
+### Updating the archive
+
+1. Open **GitHub Desktop**
+2. Click **Open in Visual Studio Code**
+3. Edit `webinars.json`
+4. Save (`Ctrl+S` on Windows / `Cmd+S` on Mac)
+5. Return to GitHub Desktop — your changes will appear automatically
+6. Write a short summary (e.g. `Add webinar - Jane Doe April 2025`)
+7. Click **Commit to main**
+8. Click **Push origin**
+
+The website will update within a few minutes.
+
+---
+
+## Search
+
+The search bar searches webinar titles, summaries, transcripts, and tags. Results update automatically while typing. Tags are also clickable to filter by category.
+
+---
+
+## AI Search (Work in Progress)
+
+The AI search interface is built and visible on the site, but the backend is still under development. The goal is to let users ask questions like *"Which webinars discuss delayed disclosure?"* and get relevant results across all transcripts.
+
+### Enabling AI features locally
+
+1. Go to [https://console.anthropic.com](https://console.anthropic.com) and create an account
+2. Generate an API key (starts with `sk-ant-api03-...`)
 3. Open `config.js` and paste your key:
    ```js
    const ANTHROPIC_API_KEY = 'sk-ant-api03-YOUR-KEY-HERE';
    ```
 4. Save and refresh the browser
 
+AI features (per-webinar Q&A and cross-webinar search) require this key. Everything else works without it.
+
 ---
 
-## What works right now (without AI key)
+## Customizing Colors
 
-- Browse all 10 webinars in a card grid
-- Search by title, summary, and transcript text
-- Filter by topic/tag
-- Sort by date or alphabetically
-- Click any card to open the detail modal with Vimeo embed and summary
-- Transcript keyword match count shown on cards
-- Click tags to filter
+The accent color is defined near the top of both `index.html` and `webinar.html`:
 
-## What requires the AI key
+```css
+:root {
+  --accent:
+  --accent-light:
+  --accent-hover:
+}
+```
 
-- "Ask about this webinar" box in the detail modal
-- "Ask a question across all webinars" at the bottom of the page
+Changing these three values updates the color scheme across the entire site.
+
+---
+
+## Updating the Sign-Up Button
+
+The "Sign up for webinars & archive access" button is in the `<header>` of `index.html`. Replace the Google Form link there if the form ever changes.
+
+---
+
+## Future Plans
+
+- AI-powered transcript search (RAG)
+- AI-generated webinar summaries
+- Transcript files stored separately from `webinars.json`
+- Improved filtering options
+- Admin interface for adding webinars
+
+---
+
+## Technologies
+
+**Current:** HTML · CSS · JavaScript · JSON · Vimeo · Google Forms  
+**Planned:** Open-source LLM · Retrieval-Augmented Generation · Transcript indexing
