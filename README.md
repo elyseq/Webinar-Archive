@@ -54,15 +54,19 @@ Each webinar entry looks like this:
   "date": "2025-04-18",
   "vimeoId": "123456789",
   "summary": "A short description of the webinar.",
-  "tags": [],
+  "tags": ["descriptive tag", "descriptive tag"],
   "transcript": ""
 }
 ```
 
 Copy the entry closest to the bottom of the file, paste it after the last entry, and update the fields. The `id` should be the next number in the list.
 
-**Date format:** `YYYY-MM-DD`  
-**Tags and transcript:** leave as-is — these are filled in separately.
+**Date format:** `YYYY-MM-DD`
+
+**Tags:** Add all applicable tags from this list:
+`physical abuse` `placement preferences` `positive pairing` `female perps` `narrative practice` `adolescent` `recantation` `delayed disclosure` `caregiver support` `overcoming reluctance` `suicide assessment` `credibility assessment` `male victims` `identifying individual episodes` `commercial sexual exploitation` `remote interviewing` `police skepticism` `prior disclosures` `clarifying body part terminology` `recency bias` `negative questions` `resolving inconsistencies` `clothing placement` `note taking` `trauma responses` `script and episodic memory`
+
+**Transcript:** Leave as `""` for now — transcripts are filled in separately.
 
 > Make sure there is a comma after the `}` of the entry above yours, and no comma after your new entry (the last entry never has a trailing comma).
 
